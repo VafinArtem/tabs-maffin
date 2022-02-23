@@ -1,0 +1,12 @@
+{
+  "name": "tabs-maffin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tabs.cjs.js",
+  "module": "tabs.esm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artem Vafin",
+  "license": "ISC"
+}
