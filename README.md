@@ -36,7 +36,7 @@ ESModules:
 В js файле после подключения прописываем
 
 ```
-const tabsExampleOne = new Tabs(".tab__btn", "active"); 
+const tabsExampleOne = new Tabs({togglerSelector: ".tab__btn", activityClass: "active"}); 
 tabsExampleOne.init();
 ```
 
