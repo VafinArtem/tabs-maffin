@@ -41,7 +41,9 @@ tabsExampleOne.init();
 ```
 
 Дополнительные опции:
+
 isRadio - переключатель явлется input type radio
+
 isOneToggler - единственный переключаетель
 
 Остальные примеры на CodePen
