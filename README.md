@@ -40,5 +40,9 @@ const tabsExampleOne = new Tabs({togglerSelector: ".tab__btn", activityClass: "a
 tabsExampleOne.init();
 ```
 
+Дополнительные опции:
+isRadio - переключатель явлется input type radio
+isOneToggler - единственный переключаетель
+
 Остальные примеры на CodePen
 https://codepen.io/vafinartem/pen/RwjJxab
