@@ -48,7 +48,7 @@ export class Tabs {
     } else {
       if (this.isOneToggler) {
         tabElements.forEach((tabElement) => {
-          this._addActivityClass(tabElement, this.activityTabClass);
+          tabElement.classList.toggle(this.activityTabClass);
         });
       } else {
         this._clearCurrentTabItems();
@@ -68,7 +68,7 @@ export class Tabs {
       }
 
       if (this.isOneToggler) {
-        this._addActivityClass(togglerElement, this.activityTogglerClass);
+        togglerElement.classList.toggle(this.activityTogglerClass);
       } else {
         this._addActivityClass(togglerElement, this.activityTogglerClass);
 
