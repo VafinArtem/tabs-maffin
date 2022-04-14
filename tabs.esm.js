@@ -1,8 +1,9 @@
 export class Tabs {
-  constructor({ togglerSelector, activityClass, isRadio = false, isOneToggler = false }) {
+  constructor({ togglerSelector, activityTogglerClass, activityTabClass, isRadio = false, isOneToggler = false }) {
     this.togglerSelector = togglerSelector;
     this.togglerElements = document.querySelectorAll(this.togglerSelector);
-    this.activityClass = activityClass;
+    this.activityTogglerClass = activityTogglerClass;
+    this.activityTabClass = activityTabClass;
     this.isRadio = isRadio;
     this.isOneToggler = isOneToggler;
 

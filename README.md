@@ -2,7 +2,7 @@
 
 ## Описание
 
-Управление осуществляется с помощью дата атрибутов, что позволяет скрывать и показывать сразу несколько блоков на странице, в различных местах. 
+Управление осуществляется с помощью дата атрибутов, что позволяет скрывать и показывать сразу несколько блоков на странице, в различных местах.
 
 Активность переключается с помощью указанного вами css класса.
 
@@ -15,16 +15,17 @@
 ## Подключение
 
 CommonJS:
-`const Tabs = require("tabs");`
+`const Tabs = require("tabs-maffin");`
 
 ESModules:
-`import {Tabs} from ("tabs");`
+`import {Tabs} from "tabs-maffin";`
 
 ## Использование
 
 На переключателях прописываем дата атрибут data-tab-item равный дата атрибуту data-tab-name на самих табах
 
 Пример:
+
 ```
 <button class="tab__btn active" data-tab-name="tab-1">toggler 1</button>
 <button class="tab__btn" data-tab-name="tab-2">toggler 2</button>
@@ -36,7 +37,7 @@ ESModules:
 В js файле после подключения прописываем
 
 ```
-const tabsExampleOne = new Tabs({togglerSelector: ".tab__btn", activityClass: "active"}); 
+const tabsExampleOne = new Tabs({togglerSelector: ".tab__btn", activityTogglerClass: "active", activityTabClass: "active"});
 tabsExampleOne.init();
 ```
 
