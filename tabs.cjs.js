@@ -23,12 +23,12 @@ class Tabs {
     this.currentTabItems = [];
   }
 
-  _addActivityClass(element) {
-    element.classList.add(this.activityClass);
+  _addActivityClass(element, activityClass) {
+    element.classList.add(activityClass);
   }
 
-  _removeActivityClass(element) {
-    element.classList.remove(this.activityClass);
+  _removeActivityClass(element, activityClass) {
+    element.classList.remove(activityClass);
   }
 
   _setActivityTab(togglerElement, isFirstInit) {
@@ -37,25 +37,25 @@ class Tabs {
     const tabElements = document.querySelectorAll(`[data-tab-item="${name}"]`);
 
     if (isFirstInit) {
-      if (togglerElement.classList.contains(this.activityClass) || togglerElement.checked) {
+      if (togglerElement.classList.contains(this.activityTogglerClass) || togglerElement.checked) {
         this.curentToggler = togglerElement;
 
         tabElements.forEach((tabElement) => {
           this._setCurrentTabItems(tabElement);
-          this._addActivityClass(tabElement);
+          this._addActivityClass(tabElement, this.activityTabClass);
         });
       }
     } else {
       if (this.isOneToggler) {
         tabElements.forEach((tabElement) => {
-          tabElement.classList.toggle(this.activityClass);
+          this._addActivityClass(tabElement, this.activityTabClass);
         });
       } else {
         this._clearCurrentTabItems();
 
         tabElements.forEach((tabElement) => {
           this._setCurrentTabItems(tabElement);
-          this._addActivityClass(tabElement);
+          this._addActivityClass(tabElement, this.activityTabClass);
         });
       }
     }
@@ -64,13 +64,13 @@ class Tabs {
   _setActivityToggler(togglerElement) {
     if (!this.isRadio) {
       if (this.curentToggler) {
-        this._removeActivityClass(this.curentToggler);
+        this._removeActivityClass(this.curentToggler, this.activityTogglerClass);
       }
 
       if (this.isOneToggler) {
-        togglerElement.classList.toggle(this.activityClass);
+        this._addActivityClass(togglerElement, this.activityTogglerClass);
       } else {
-        this._addActivityClass(togglerElement);
+        this._addActivityClass(togglerElement, this.activityTogglerClass);
 
         this.curentToggler = togglerElement;
       }
@@ -82,11 +82,11 @@ class Tabs {
 
     if (!this.isOneToggler) {
       if (this.currentTabItems.length) {
-        this.currentTabItems.forEach((currentTabItem) => this._removeActivityClass(currentTabItem));
+        this.currentTabItems.forEach((currentTabItem) => this._removeActivityClass(currentTabItem, this.activityTabClass));
       }
 
       if (this.curentToggler) {
-        this._removeActivityClass(this.curentToggler);
+        this._removeActivityClass(this.curentToggler, this.activityTogglerClass);
       }
     }
 
