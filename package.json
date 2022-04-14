@@ -1,6 +1,6 @@
 {
   "name": "tabs-maffin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "tabs.cjs.js",
   "module": "tabs.esm.js",
